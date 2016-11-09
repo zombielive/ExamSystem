@@ -32,7 +32,7 @@
 	<div class="container">
 		<div class="btn-group" id="btngrp">
 			<a href="/ExamSystem/index.php/Home/Teacher/addquestion" class="btn btn-default">新增试题</a>
-			<button class="btn btn-default">删除试题</button>
+			<button class="btn btn-default" id="delBtn">删除试题</button>
 		</div>
 		<table class="table table-hover table-bordered">
 			<thead>
@@ -41,18 +41,53 @@
 				<th>操作</th>
 			</thead>
 			<tbody>
-				<?php if(is_array($qList)): $i = 0; $__LIST__ = $qList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$q): $mod = ($i % 2 );++$i;?><tr>
-					<td><input type="checkbox" class="ckOne"></td>
-					<td><?php echo ($q["stem"]); ?></td>
-					<td><a href="">修改</a></td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+				<form id="qform">
+					<?php if(is_array($qList)): $i = 0; $__LIST__ = $qList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$q): $mod = ($i % 2 );++$i;?><tr>
+						<td><input type="checkbox" class="ckOne" value="<?php echo ($q["id"]); ?>" name="id[]"></td>
+						<td><?php echo ($q["stem"]); ?></td>
+						<td><a href="">修改</a></td>
+					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+				</form>
 			</tbody>
 		</table>
 	</div>
 <script type="text/javascript">
 	$(function(){
 		$('#checkAll').change(function(){
-			$('.ckOne').prop('checked',this.checked);
+			if($('#checkAll').prop('checked')){
+				$('.ckOne').prop('checked',true).parents('tr').addClass('warning');
+			}else{
+				$('.ckOne').prop('checked',false).parents('tr').removeClass('warning');
+			}
+		});
+		$('.ckOne').change(function(){
+			if($(this).prop('checked')){
+				$(this).parents('tr').addClass('warning');
+			}else{
+				$(this).prop('checked',false).parents('tr').removeClass('warning');
+			}
+		});
+		var lock = 1;
+		$('#delBtn').click(function(){
+			if(lock == 1){
+				lock = 0;
+				var cked = $('.ckOne:checked');
+				if(!cked.length){
+					alert('请至少选择一项');
+					lock = 1;
+				}else{
+					$.ajax({
+						url:"/ExamSystem/index.php/Home/Teacher/delquestion",
+						type:"POST",
+						data:$('#qform').serialize(),
+						success:function(data,status){
+							lock = 1;
+							cked.parents('tr').remove();
+							alert('删除成功');
+						}
+					});
+				}
+			}
 		});
 
 

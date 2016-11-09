@@ -36,4 +36,13 @@ class TeacherController extends Controller {
         }
         $this->success('新增成功');
     }
+    public function delquestion(){
+        $Tquestion = M('question');
+        $Toption = M('option');
+        $id = I('post.id');
+        $Qmap['id'] = array('in',$id);dump($Qmap);
+        $Tquestion->where($Qmap)->delete();
+        $Omap['qid'] = array('in',$id);
+        $Toption->where($Omap)->delete();
+    }
 }
