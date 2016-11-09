@@ -27,18 +27,32 @@
 		</div>
 		<table class="table table-hover table-bordered">
 			<thead>
-				<th><input type="checkbox"></th>
+				<th><input type="checkbox" id="checkAll"></th>
 				<th>题干</th>
 				<th>操作</th>
 			</thead>
 			<tbody>
+				<volist name="qList" id="q">
 				<tr>
-					<td><input type="checkbox"></td>
-					<td>this is a question just for testing.</td>
+					<td><input type="checkbox" class="ckOne"></td>
+					<td>{$q.stem}</td>
 					<td><a href="">修改</a></td>
 				</tr>
+				</volist>
 			</tbody>
 		</table>
 	</div>
+<script type="text/javascript">
+	$(function(){
+		$('#checkAll').change(function(){
+			$('.ckOne').prop('checked',this.checked);
+		});
+
+
+
+
+
+	});
+</script>
 </body>
 </html>

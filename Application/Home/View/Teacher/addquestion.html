@@ -9,6 +9,12 @@
 	.input-group{
 		margin-bottom: 20px;
 	}
+	.star{
+		cursor: pointer;
+	}
+	#msg{
+		display: none;
+	}
 </style>
 </head>
 <body>
@@ -30,25 +36,89 @@
 		<div class="col-sm-8 col-sm-offset-2">
 			<h1>新增试题</h1>
 			<label><h3>题干</h3></label>
-			<textarea cols="30" rows="5" class="form-control"></textarea>
+			<textarea cols="30" rows="5" class="form-control" id="stemBox"></textarea>
 			<label><h3>选项</h3></label>
-			<div class="input-group">
-				<div class="input-group-addon">A.</div>
-				<input type="text" class="form-control">
-			</div>
-			<div class="input-group">
-				<div class="input-group-addon">B.</div>
-				<input type="text" class="form-control">
+			<div class="alert alert-info" role="alert">请点击选项标号将该选项设为正确答案</div>
+			<div id="optionBox">
+				<div class="input-group">
+					<div class="input-group-addon star">A.</div>
+					<input type="text" class="form-control optionInput">
+				</div>
+				<div class="input-group">
+					<div class="input-group-addon star">B.</div>
+					<input type="text" class="form-control optionInput">
+				</div>
 			</div>
 			<button class="btn btn-default" id="onemore">+</button>
-			<button class="btn btn-default" id="onemore">-</button>
+			<button class="btn btn-default" id="oneless">-</button>
 			<br>
-			<button class="btn btn-primary">保存</button>
+			<div class="alert alert-danger" role="alert" id="msg"></div>
+			<button class="btn btn-primary" id="saveBtn">保存</button>
 			<a class="btn btn-default" href="__APP__/Home/Teacher">取消</a>
 		</div>
 	</div>
 <script type="text/javascript">
 	$(function(){
+		$('.star').click(function(){clickStar($(this));});
+		function clickStar(t){
+			var option = t.parent();
+			option.addClass('has-success');
+			option.siblings().removeClass('has-success');
+		}
+		var opnum = 2;
+		$('#onemore').click(function(){
+			if(opnum < 10){
+				var starTag = String.fromCharCode(65+opnum);
+				var optionBox = $(this).siblings('#optionBox');
+				optionBox.append('<div class="input-group"><div class="input-group-addon star">'+starTag+'.</div><input type="text" class="form-control optionInput"></div>');
+				optionBox.find('.star').bind('click',function(){clickStar($(this));})
+				opnum++;
+			}else{
+				msgout('最多设置10个选项');
+			}
+		});
+		$('#oneless').click(function(){
+			if(opnum > 2){
+				var optionBox = $(this).siblings('#optionBox');
+				optionBox.children().last().unbind().remove();
+				opnum--;
+			}else{
+				msgout('最少要设置2个选项');
+			}
+		});
+		var lock = 1;
+		$('#saveBtn').click(function(){
+			if(lock == 1){
+				lock = 0;
+				var stem = $('#stemBox').val();
+				if(!stem.length){msgout('题干不能为空');lock = 1;return;}
+				var optionInputArray = $('.optionInput');
+				var optionArray = [];
+				for(var i=0;i < optionInputArray.length;i++){
+					var ivar = $(optionInputArray[i]).val();
+					if(!ivar){msgout('选项不能为空');lock = 1;return;}
+					optionArray.push(ivar);
+				};
+				var ans = $('.has-success').children('.optionInput').val();
+				if(!($('.has-success').length)){msgout('请选择一个正确答案');lock = 1;return;}
+				$.ajax({
+					url:"__APP__/Home/Teacher/insertquestion",
+					type:"POST",
+					data:{stem:stem,optionArray:optionArray,ans:ans},
+					success:function(data,status){
+						lock = 1;
+						alert('新增成功');
+						window.location.href = '__APP__/Home/Teacher';
+					}
+				});
+			}
+		});
+		function msgout(text){
+			$('#msg').text(text).show();
+				setTimeout(function(){
+					$('#msg').hide();
+				},2000);
+		}
 
 
 
@@ -56,7 +126,7 @@
 
 
 
-	})
+	});
 </script>
 </body>
 </html>

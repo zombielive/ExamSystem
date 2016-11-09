@@ -36,18 +36,30 @@
 		</div>
 		<table class="table table-hover table-bordered">
 			<thead>
-				<th><input type="checkbox"></th>
+				<th><input type="checkbox" id="checkAll"></th>
 				<th>题干</th>
 				<th>操作</th>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox"></td>
-					<td>this is a question just for testing.</td>
+				<?php if(is_array($qList)): $i = 0; $__LIST__ = $qList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$q): $mod = ($i % 2 );++$i;?><tr>
+					<td><input type="checkbox" class="ckOne"></td>
+					<td><?php echo ($q["stem"]); ?></td>
 					<td><a href="">修改</a></td>
-				</tr>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
 	</div>
+<script type="text/javascript">
+	$(function(){
+		$('#checkAll').change(function(){
+			$('.ckOne').prop('checked',this.checked);
+		});
+
+
+
+
+
+	});
+</script>
 </body>
 </html>
