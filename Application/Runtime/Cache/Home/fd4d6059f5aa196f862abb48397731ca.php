@@ -33,7 +33,7 @@
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/ExamSystem/index.php/Home/Teacher">试题管理</a></li>
-					<li><a href="">试卷管理</a></li>
+					<li><a href="/ExamSystem/index.php/Home/Teacher/exam">试卷管理</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/ExamSystem/index.php/Home/Teacher/logout">注销</a></li>
@@ -116,7 +116,7 @@
 					data:{stem:stem,optionArray:optionArray,ans:ans},
 					success:function(data,status){
 						lock = 1;
-						alert('新增成功');
+						//alert('新增成功');
 						window.location.href = '/ExamSystem/index.php/Home/Teacher';
 					}
 				});

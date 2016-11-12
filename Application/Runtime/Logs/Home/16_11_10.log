@@ -667,3 +667,295 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
 
+[ 2016-11-10T01:01:59+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/delquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: DELETE FROM `question` WHERE `id` IN ('3') [ RunTime:0.0014s ]
+SQL: DELETE FROM `option` WHERE `qid` IN ('3') [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2016-11-10T01:02:03+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/addquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2016-11-10T01:02:10+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `question`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005137s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2016-11-10T01:02:25+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/addquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001089s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008054s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2016-11-10T01:03:03+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/insertquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: INSERT INTO `question` (`stem`) VALUES ('雪亲王的名字是？') [ RunTime:0.0010s ]
+SQL: SELECT `id` FROM `question` WHERE `stem` = '雪亲王的名字是？' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('6','岛风','0') [ RunTime:0.0006s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('6','雪风','1') [ RunTime:0.0006s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('6','天津风','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('6','初雪','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('6','白雪','0') [ RunTime:0.0003s ]
+
+[ 2016-11-10T01:03:05+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `question`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007158s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2016-11-10T01:03:38+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/addquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006333s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2016-11-10T01:04:10+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/insertquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0021s ]
+SQL: INSERT INTO `question` (`stem`) VALUES ('厌战是哪国人？') [ RunTime:0.0010s ]
+SQL: SELECT `id` FROM `question` WHERE `stem` = '厌战是哪国人？' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','美国','0') [ RunTime:0.0004s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','日本','0') [ RunTime:0.0004s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','中国','0') [ RunTime:0.0004s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','法国','0') [ RunTime:0.0002s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','英国','1') [ RunTime:0.0004s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('7','意大利','0') [ RunTime:0.0003s ]
+
+[ 2016-11-10T01:04:12+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `question`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008027s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000661s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-11-10T01:05:28+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/addquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008628s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008723s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-11-10T01:08:03+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/insertquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0007s ]
+SQL: INSERT INTO `question` (`stem`) VALUES ('Lovelive中缪斯一共有几人？') [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `question` WHERE `stem` = 'Lovelive中缪斯一共有几人？' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('8','3','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('8','6','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('8','9','1') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('8','48','0') [ RunTime:0.0003s ]
+
+[ 2016-11-10T01:08:05+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `question`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006464s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2016-11-10T01:08:13+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/addquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005095s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000403s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2016-11-10T01:09:57+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher/insertquestion
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0008s ]
+SQL: INSERT INTO `question` (`stem`) VALUES ('亚人的男主叫什么名字') [ RunTime:0.0008s ]
+SQL: SELECT `id` FROM `question` WHERE `stem` = '亚人的男主叫什么名字' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('9','永井圭','1') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('9','永井gay','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('9','永井桂','0') [ RunTime:0.0003s ]
+SQL: INSERT INTO `option` (`qid`,`content`,`isans`) VALUES ('9','永井guy','0') [ RunTime:0.0003s ]
+
+[ 2016-11-10T01:09:59+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Teacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `question`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009656s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009756s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+

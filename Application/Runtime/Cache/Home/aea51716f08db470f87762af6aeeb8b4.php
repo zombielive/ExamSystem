@@ -1,4 +1,13 @@
-<include file="public/head" />
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>在线考试系统</title>
+	<link rel="stylesheet" href="/ExamSystem/Public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/ExamSystem/Public/css/bootstrap-theme.min.css">
+	<script src="/ExamSystem/Public/js/jquery-3.1.1.min.js"></script>
+	<script src="/ExamSystem/Public/js/bootstrap.min.js"></script>
+
 <style>
 	textarea{
 		resize: none;
@@ -20,41 +29,38 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header"><a href="__APP__/Home/Teacher" class="navbar-brand">考试系统&nbsp;<span class="label label-primary">教师版</span></a></div>
+			<div class="navbar-header"><a href="/ExamSystem/index.php/Home/Teacher" class="navbar-brand">考试系统&nbsp;<span class="label label-primary">教师版</span></a></div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="__APP__/Home/Teacher">试题管理</a></li>
-					<li><a href="__APP__/Home/Teacher/exam">试卷管理</a></li>
+					<li class="active"><a href="/ExamSystem/index.php/Home/Teacher">试题管理</a></li>
+					<li><a href="/ExamSystem/index.php/Home/Teacher/exam">试卷管理</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="__CONTROLLER__/logout">注销</a></li>
+					<li><a href="/ExamSystem/index.php/Home/Teacher/logout">注销</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<div class="container">
 		<div class="col-sm-8 col-sm-offset-2">
-			<h1>新增试题</h1>
+			<h1>修改试题</h1>
 			<label><h3>题干</h3></label>
-			<textarea cols="30" rows="5" class="form-control" id="stemBox"></textarea>
+			<textarea cols="30" rows="5" class="form-control" id="stemBox"><?php echo ($stem); ?></textarea>
 			<label><h3>选项</h3></label>
 			<div class="alert alert-info" role="alert">请点击选项标号将该选项设为正确答案</div>
 			<div id="optionBox">
-				<div class="input-group">
-					<div class="input-group-addon star">A.</div>
-					<input type="text" class="form-control optionInput">
-				</div>
-				<div class="input-group">
-					<div class="input-group-addon star">B.</div>
-					<input type="text" class="form-control optionInput">
-				</div>
+				<?php if(is_array($opList)): $k = 0; $__LIST__ = $opList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$op): $mod = ($k % 2 );++$k; if($op['isans'] == 1): ?><div class="input-group has-success">
+					<?php else: ?><div class="input-group"><?php endif; ?>
+						<div class="input-group-addon star"><?php echo chr($k+64).'.';?></div>
+						<input type="text" class="form-control optionInput" value="<?php echo ($op["content"]); ?>">
+					</div><?php endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 			<button class="btn btn-default" id="onemore">+</button>
 			<button class="btn btn-default" id="oneless">-</button>
 			<br>
 			<div class="alert alert-danger" role="alert" id="msg"></div>
 			<button class="btn btn-primary" id="saveBtn">保存</button>
-			<a class="btn btn-default" href="__APP__/Home/Teacher">取消</a>
+			<a class="btn btn-default" href="/ExamSystem/index.php/Home/Teacher">取消</a>
 		</div>
 	</div>
 <script type="text/javascript">
@@ -65,7 +71,7 @@
 			option.addClass('has-success');
 			option.siblings().removeClass('has-success');
 		}
-		var opnum = 2;
+		var opnum = <?php echo ($count); ?>;
 		$('#onemore').click(function(){
 			if(opnum < 10){
 				var starTag = String.fromCharCode(65+opnum);
@@ -102,13 +108,13 @@
 				var ans = $('.has-success').children('.optionInput').val();
 				if(!($('.has-success').length)){msgout('请选择一个正确答案');lock = 1;return;}
 				$.ajax({
-					url:"__APP__/Home/Teacher/insertquestion",
+					url:"/ExamSystem/index.php/Home/Teacher/updatequestion",
 					type:"POST",
-					data:{stem:stem,optionArray:optionArray,ans:ans},
+					data:{qid:<?php echo ($_GET['id']); ?>,stem:stem,optionArray:optionArray,ans:ans},
 					success:function(data,status){
 						lock = 1;
-						//alert('新增成功');
-						window.location.href = '__APP__/Home/Teacher';
+						alert('修改成功');
+						window.location.href = '/ExamSystem/index.php/Home/Teacher';
 					}
 				});
 			}

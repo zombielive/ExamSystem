@@ -30,8 +30,8 @@
 			<div class="navbar-header"><a href="/ExamSystem/index.php/Home/Teacher" class="navbar-brand">考试系统&nbsp;<span class="label label-primary">教师版</span></a></div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/ExamSystem/index.php/Home/Teacher">试题管理</a></li>
-					<li><a href="/ExamSystem/index.php/Home/Teacher/exam">试卷管理</a></li>
+					<li><a href="/ExamSystem/index.php/Home/Teacher">试题管理</a></li>
+					<li class="active"><a href="/ExamSystem/index.php/Home/Teacher/exam">试卷管理</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/ExamSystem/index.php/Home/Teacher/logout">注销</a></li>
@@ -41,21 +41,23 @@
 	</nav>
 	<div class="container">
 		<div class="btn-group" id="btngrp">
-			<a href="/ExamSystem/index.php/Home/Teacher/addquestion" class="btn btn-default">新增试题</a>
-			<button class="btn btn-default" id="delBtn">删除试题</button>
+			<a href="/ExamSystem/index.php/Home/Teacher/addexam" class="btn btn-default">新增考试</a>
+			<button class="btn btn-default" id="delBtn">删除考试</button>
 		</div>
 		<table class="table table-hover table-bordered">
 			<thead>
 				<th><input type="checkbox" id="checkAll"></th>
-				<th>题干</th>
+				<th>考试名称</th>
+				<th>试题数量</th>
 				<th>操作</th>
 			</thead>
 			<tbody>
-				<form id="qform">
-					<?php if(is_array($qList)): $i = 0; $__LIST__ = $qList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$q): $mod = ($i % 2 );++$i;?><tr>
-						<td><input type="checkbox" class="ckOne" value="<?php echo ($q["id"]); ?>" name="id[]"></td>
-						<td><?php echo ($q["stem"]); ?></td>
-						<td><a href="/ExamSystem/index.php/Home/Teacher/editquestion/id/<?php echo ($q["id"]); ?>">修改</a></td>
+				<form id="eform">
+					<?php if(is_array($eList)): $i = 0; $__LIST__ = $eList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$e): $mod = ($i % 2 );++$i;?><tr>
+						<td><input type="checkbox" class="ckOne" value="<?php echo ($e["id"]); ?>" name="id[]"></td>
+						<td><?php echo ($e["name"]); ?></td>
+						<td><?php echo ($e["num"]); ?></td>
+						<td><a href="/ExamSystem/index.php/Home/Teacher/editexam/id/<?php echo ($e["id"]); ?>">修改</a></td>
 					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				</form>
 			</tbody>
@@ -88,9 +90,9 @@
 					lock = 1;
 				}else{
 					$.ajax({
-						url:"/ExamSystem/index.php/Home/Teacher/delquestion",
+						url:"/ExamSystem/index.php/Home/Teacher/delexam",
 						type:"POST",
-						data:$('#qform').serialize(),
+						data:$('#eform').serialize(),
 						success:function(data,status){
 							lock = 1;
 							cked.parents('tr').remove();

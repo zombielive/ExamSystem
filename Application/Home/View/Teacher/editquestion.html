@@ -34,20 +34,21 @@
 	</nav>
 	<div class="container">
 		<div class="col-sm-8 col-sm-offset-2">
-			<h1>新增试题</h1>
+			<h1>修改试题</h1>
 			<label><h3>题干</h3></label>
-			<textarea cols="30" rows="5" class="form-control" id="stemBox"></textarea>
+			<textarea cols="30" rows="5" class="form-control" id="stemBox">{$stem}</textarea>
 			<label><h3>选项</h3></label>
 			<div class="alert alert-info" role="alert">请点击选项标号将该选项设为正确答案</div>
 			<div id="optionBox">
-				<div class="input-group">
-					<div class="input-group-addon star">A.</div>
-					<input type="text" class="form-control optionInput">
-				</div>
-				<div class="input-group">
-					<div class="input-group-addon star">B.</div>
-					<input type="text" class="form-control optionInput">
-				</div>
+				<volist name="opList" id="op" key="k">
+					<if condition="$op['isans'] eq 1">
+					<div class="input-group has-success">
+					<else /><div class="input-group">
+					</if>
+						<div class="input-group-addon star">{:chr($k+64).'.'}</div>
+						<input type="text" class="form-control optionInput" value="{$op.content}">
+					</div>
+				</volist>
 			</div>
 			<button class="btn btn-default" id="onemore">+</button>
 			<button class="btn btn-default" id="oneless">-</button>
@@ -65,7 +66,7 @@
 			option.addClass('has-success');
 			option.siblings().removeClass('has-success');
 		}
-		var opnum = 2;
+		var opnum = {$count};
 		$('#onemore').click(function(){
 			if(opnum < 10){
 				var starTag = String.fromCharCode(65+opnum);
@@ -102,12 +103,12 @@
 				var ans = $('.has-success').children('.optionInput').val();
 				if(!($('.has-success').length)){msgout('请选择一个正确答案');lock = 1;return;}
 				$.ajax({
-					url:"__APP__/Home/Teacher/insertquestion",
+					url:"__APP__/Home/Teacher/updatequestion",
 					type:"POST",
-					data:{stem:stem,optionArray:optionArray,ans:ans},
+					data:{qid:{$Think.get.id},stem:stem,optionArray:optionArray,ans:ans},
 					success:function(data,status){
 						lock = 1;
-						//alert('新增成功');
+						alert('修改成功');
 						window.location.href = '__APP__/Home/Teacher';
 					}
 				});

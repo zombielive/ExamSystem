@@ -21,8 +21,8 @@
 			<div class="navbar-header"><a href="__APP__/Home/Teacher" class="navbar-brand">考试系统&nbsp;<span class="label label-primary">教师版</span></a></div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="__APP__/Home/Teacher">试题管理</a></li>
-					<li><a href="__APP__/Home/Teacher/exam">试卷管理</a></li>
+					<li><a href="__APP__/Home/Teacher">试题管理</a></li>
+					<li class="active"><a href="__APP__/Home/Teacher/exam">试卷管理</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="__CONTROLLER__/logout">注销</a></li>
@@ -32,22 +32,24 @@
 	</nav>
 	<div class="container">
 		<div class="btn-group" id="btngrp">
-			<a href="__APP__/Home/Teacher/addquestion" class="btn btn-default">新增试题</a>
-			<button class="btn btn-default" id="delBtn">删除试题</button>
+			<a href="__APP__/Home/Teacher/addexam" class="btn btn-default">新增考试</a>
+			<button class="btn btn-default" id="delBtn">删除考试</button>
 		</div>
 		<table class="table table-hover table-bordered">
 			<thead>
 				<th><input type="checkbox" id="checkAll"></th>
-				<th>题干</th>
+				<th>考试名称</th>
+				<th>试题数量</th>
 				<th>操作</th>
 			</thead>
 			<tbody>
-				<form id="qform">
-					<volist name="qList" id="q">
+				<form id="eform">
+					<volist name="eList" id="e">
 					<tr>
-						<td><input type="checkbox" class="ckOne" value="{$q.id}" name="id[]"></td>
-						<td>{$q.stem}</td>
-						<td><a href="__APP__/Home/Teacher/editquestion/id/{$q.id}">修改</a></td>
+						<td><input type="checkbox" class="ckOne" value="{$e.id}" name="id[]"></td>
+						<td>{$e.name}</td>
+						<td>{$e.num}</td>
+						<td><a href="__APP__/Home/Teacher/editexam/id/{$e.id}">修改</a></td>
 					</tr>
 					</volist>
 				</form>
@@ -81,9 +83,9 @@
 					lock = 1;
 				}else{
 					$.ajax({
-						url:"__APP__/Home/Teacher/delquestion",
+						url:"__APP__/Home/Teacher/delexam",
 						type:"POST",
-						data:$('#qform').serialize(),
+						data:$('#eform').serialize(),
 						success:function(data,status){
 							lock = 1;
 							cked.parents('tr').remove();

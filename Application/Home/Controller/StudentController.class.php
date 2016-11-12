@@ -5,6 +5,7 @@ class StudentController extends Controller {
     public function index()
     {
         if(session('group')==2){
+            $Texam = M('exam');
             $this->display();
         }else{
             $this->redirect('Index/index');

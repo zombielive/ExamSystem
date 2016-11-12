@@ -17,10 +17,11 @@ class IndexController extends Controller {
     	$map['name'] = I('post.name');
     	$map['password'] = I('post.psw');
     	$map['group'] = I('post.group');
-    	$login = M('user')->where($map)->find();
+    	$login = M('user')->where($map)->getField('id');
     	if($login){
     		session('name',I('post.name'));
     		session('group',I('post.group'));
+            session('id',$login);
     		$back['status'] = 1;
     		$back['group'] = I('post.group');
     		$this->ajaxReturn($back);
