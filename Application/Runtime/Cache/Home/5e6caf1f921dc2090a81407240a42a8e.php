@@ -45,18 +45,36 @@
 		</div>
 	</nav>
 	<div class="container examBox">
-		<div class="panel panel-info">
-			<div class="panel-heading"><h3 class="panel-title">天下第一武道会</h3></div>
-			<div class="panel-body">
-				<p>试题数量：<span>20</span></p>
-				<button class="btn btn-info">进入考试</button>
-			</div>
-		</div>
+		<?php if(is_array($examList)): $i = 0; $__LIST__ = $examList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ex): $mod = ($i % 2 );++$i; if($ex['isdone'] == 0): ?><div class="panel panel-info">
+			<?php else: ?>
+			<div class="panel panel-success"><?php endif; ?>
+				<div class="panel-heading"><h3 class="panel-title"><?php echo ($ex["name"]); ?></h3></div>
+				<div class="panel-body">
+					<p>试题数量：<span><?php echo ($ex["num"]); ?></span></p>
+					<?php if($ex['isdone'] == 0): ?><p><br></p>
+					<button class="btn btn-info" onclick="createPaper(<?php echo ($ex["id"]); ?>);">进入考试</button>
+					<?php else: ?>
+					<p>成绩：<span><?php echo ($ex["score"]); ?></span></p>
+					<button class="btn btn-success">查看成绩</button><?php endif; ?>
+				</div>
+			</div><?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>
 	<div class="jumbotron topBox">
 		<div class="container">
 			<h1>正在生成试卷，请稍后...</h1>
 		</div>
 	</div>
+	<script type="text/javascript">
+	function createPaper(examid){
+		$('.topBox').show();
+		$.ajax({
+			url:'/ExamSystem/index.php/Home/Student/createPaper',
+			type:'POST',
+			data:{examid:examid},
+			success:function(data,status){
+			}
+		});
+	}
+	</script>
 </body>
 </html>

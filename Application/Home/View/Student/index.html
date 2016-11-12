@@ -36,18 +36,42 @@
 		</div>
 	</nav>
 	<div class="container examBox">
-		<div class="panel panel-info">
-			<div class="panel-heading"><h3 class="panel-title">天下第一武道会</h3></div>
-			<div class="panel-body">
-				<p>试题数量：<span>20</span></p>
-				<button class="btn btn-info">进入考试</button>
+		<volist name="examList" id="ex">
+			<if condition="$ex['isdone'] eq 0">
+			<div class="panel panel-info">
+			<else />
+			<div class="panel panel-success">
+			</if>
+				<div class="panel-heading"><h3 class="panel-title">{$ex.name}</h3></div>
+				<div class="panel-body">
+					<p>试题数量：<span>{$ex.num}</span></p>
+					<if condition="$ex['isdone'] eq 0">
+					<p><br></p>
+					<button class="btn btn-info" onclick="createPaper({$ex.id});">进入考试</button>
+					<else />
+					<p>成绩：<span>{$ex.score}</span></p>
+					<button class="btn btn-success">查看成绩</button>
+					</if>
+				</div>
 			</div>
-		</div>
+		</volist>
 	</div>
 	<div class="jumbotron topBox">
 		<div class="container">
 			<h1>正在生成试卷，请稍后...</h1>
 		</div>
 	</div>
+	<script type="text/javascript">
+	function createPaper(examid){
+		$('.topBox').show();
+		$.ajax({
+			url:'__APP__/Home/Student/createPaper',
+			type:'POST',
+			data:{examid:examid},
+			success:function(data,status){
+			}
+		});
+	}
+	</script>
 </body>
 </html>
