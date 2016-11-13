@@ -35,6 +35,7 @@ class StudentController extends Controller {
         $uid = session('id');
         $Tuserans = M('userans');
         $Texam = M('exam');
+        $Tquestion = M('question');
         $mapUA['examid'] = $examid;
         $mapUA['uid'] = $uid;
         $isWrite = $Tuserans->where($mapUA)->find();
@@ -43,17 +44,58 @@ class StudentController extends Controller {
         }else{
             $mapE['id'] = $examid;
             $num = $Texam->where($mapE)->getField('num');
+            $qidArr = $Tquestion->field('id')->select();
+            $max = count($qidArr) - 1;
+            $randIdArr = unique_rand(0,$max,$num);
+            $dataUA['uid'] = $uid;
+            $dataUA['examid'] = $examid;
+            foreach ($randIdArr as $key => $randId) {
+                $dataUA['qid'] = $qidArr[$randId]['id'];
+                $Tuserans->add($dataUA);
+            }
+            $this->success('生成试卷成功');
         }
-
-
-
-
-
-
-
-
-
-
-
     }
+    public function answering(){
+        $examid = I('get.examid');
+        $uid = session('id');
+        if(!I('get.p')){
+            $p = 1;
+        }else{
+            $p = I('get.p');
+        }
+        $Tuserans = M('userans');
+        $Tquestion = M('question');
+        $Toption = M('option');
+        $mapUA['uid'] = $uid;
+        $mapUA['examid'] = $examid;
+        $userans = $Tuserans->where($mapUA)->page($p.',1')->select();
+        $uaList = $Tuserans->where($mapUA)->select();
+        $this->assign('uaList',$uaList);
+        $ans = $userans[0]['ans'];
+        $this->assign('ans',$ans);
+        $qid = $userans[0]['qid'];
+        $mapQ['id'] = $qid;
+        $stem = $Tquestion->where($mapQ)->getField('stem');
+        $mapO['qid'] = $qid;
+        $optionList = $Toption->where($mapO)->select();
+        $this->assign('stem',$stem);
+        $this->assign('optionList',$optionList);
+        $this->display();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

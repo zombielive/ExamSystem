@@ -1,0 +1,83 @@
+<include file="public/head" />
+<style>
+	.option{
+		cursor: pointer;
+		padding: 15px;		
+		border-radius: 4px;
+		margin: 20px 0;
+		border:1px solid #ccc;
+	}
+	.option-success{
+		background-color: #d6e9c6;
+	}
+	.option-info{
+		background-color: #bce8f1;
+	}
+	#page{
+		text-align: center;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"><a href="__APP__/Home/Student" class="navbar-brand">考试系统&nbsp;<span class="label label-info">学生版</span></a></div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="__CONTROLLER__/logout">注销</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="page-header">
+			<h1>{$stem}</h1>
+		</div>
+		<div class="optionBox">
+			<volist name="optionList" id="op" key="k">
+				<if condition="$op['id'] eq $ans">
+				<div class="option option-info">{:chr($k+64).'.'}<span>{$op.content}</span><input type="hidden" value="{$op.id}"></div>
+				<else />
+				<div class="option">{:chr($k+64).'.'}<span>{$op.content}</span><input type="hidden" value="{$op.id}"></div>
+				</if>
+			</volist>
+		</div>
+		<nav id="page">
+			<ul class="pagination">
+				<li><span>&laquo;</span></li>
+				<volist name="uaList" id="ua">
+				<eq name="i" value="p">
+				<li class="active"><span>{$i}</span></li>
+				<else />
+				<li><span>{$i}</span></li>
+				</eq>
+				</volist>
+				<li><span>&raquo;</span></li>
+			</ul>
+		</nav>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		$('.option').click(function(){
+			$(this).addClass('option-info');
+			$(this).siblings().removeClass('option-info');
+		});
+		lock = 1;
+		$('.page').children('a').click(function(){
+			if(lock == 1){
+				lock = 0;
+				$.ajax({
+					url:'__APP__/Home/Student/write',
+					type:'POST',
+					data:{examid:examid},
+					success:function(data,status){
+						
+					}
+				});
+			}
+		});
+	});
+</script>
+</body>
+</html>

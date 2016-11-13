@@ -61,8 +61,11 @@
 					data:{name:name,num:num,id:{$Think.get.id}},
 					success:function(data,status){
 						lock = 1;
-						//alert('修改成功');
-						window.location.href = '__APP__/Home/Teacher/exam';
+						if(data.status == 0){
+							msgout(data.info);
+						}else if(data.status == 1){
+							window.location.href = '__APP__/Home/Teacher/exam';
+						}
 					}
 				});
 			}

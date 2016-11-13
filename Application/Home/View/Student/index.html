@@ -69,6 +69,7 @@
 			type:'POST',
 			data:{examid:examid},
 			success:function(data,status){
+				window.location.href = '__APP__/Home/Student/answering/examid/'+examid;
 			}
 		});
 	}

@@ -94,6 +94,11 @@ class TeacherController extends Controller {
     public function insertexam(){
         $name = I('post.name');
         $num = I('post.num');
+        $Tquestion = M('question');
+        $qcount = $Tquestion->count();
+        if ($num > $qcount) {
+            $this->error('试题数量超过题库总题量');
+        }
         $Texam = M('exam');
         $dataE['name'] = $name;
         $dataE['num'] = $num;
@@ -121,6 +126,11 @@ class TeacherController extends Controller {
         $id = I('post.id');
         $name = I('post.name');
         $num = I('post.num');
+        $Tquestion = M('question');
+        $qcount = $Tquestion->count();
+        if ($num > $qcount) {
+            $this->error('试题数量超过题库总题量');
+        }
         $mapE['id'] = $id;
         $dataE['name'] = $name;
         $dataE['num'] = $num;

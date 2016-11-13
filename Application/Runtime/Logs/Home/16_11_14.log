@@ -1,0 +1,363 @@
+[ 2016-11-14T00:17:30+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+
+[ 2016-11-14T00:17:32+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+
+[ 2016-11-14T00:18:26+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0004s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+NOTIC: [8] Undefined variable: count /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2016-11-14T00:31:34+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 70 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+
+[ 2016-11-14T00:34:08+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001156s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
+
+[ 2016-11-14T00:35:28+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000461s ]
+
+[ 2016-11-14T00:41:12+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0002s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Use of undefined constant p - assumed 'p' /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004736s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-11-14T00:41:21+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0004s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008546s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2016-11-14T00:47:43+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0002s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: ppap /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008439s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008484s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-11-14T00:55:04+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0002s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 250 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+
+[ 2016-11-14T00:55:14+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0003s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 250 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+
+[ 2016-11-14T00:55:26+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0004s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+NOTIC: [8] Undefined variable: 1 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 2 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 3 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 4 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 5 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 6 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 7 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 8 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 9 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: 10 /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+NOTIC: [8] Undefined variable: p /Applications/XAMPP/xamppfiles/htdocs/ExamSystem/Application/Runtime/Cache/Home/fa10ef32ddcb322b746287daed6fb41e.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010375s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2016-11-14T00:57:01+08:00 ] 127.0.0.1 /ExamSystem/index.php/Home/Student/answering/examid/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `userans` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `question` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2 LIMIT 0,1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `userans` WHERE `uid` = 2 AND `examid` = 2  [ RunTime:0.0004s ]
+SQL: SELECT `stem` FROM `question` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `option` WHERE `qid` = 17  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
