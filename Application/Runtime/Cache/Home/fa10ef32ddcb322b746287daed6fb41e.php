@@ -44,19 +44,16 @@
 			<h1><?php echo ($stem); ?></h1>
 		</div>
 		<div class="optionBox">
-			<?php if(is_array($optionList)): $k = 0; $__LIST__ = $optionList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$op): $mod = ($k % 2 );++$k; if($op['id'] == $ans): ?><div class="option option-info"><?php echo chr($k+64).'.';?><span><?php echo ($op["content"]); ?></span><input type="hidden" value="<?php echo ($op["id"]); ?>"></div>
+			<?php if(is_array($optionBag['data'])): $k = 0; $__LIST__ = $optionBag['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$op): $mod = ($k % 2 );++$k; if($op['id'] == $optionBag['ans']): ?><div class="option option-info"><?php echo chr($k+64).'.';?><span><?php echo ($op["content"]); ?></span><input type="hidden" value="<?php echo ($op["id"]); ?>"></div>
 				<?php else: ?>
 				<div class="option"><?php echo chr($k+64).'.';?><span><?php echo ($op["content"]); ?></span><input type="hidden" value="<?php echo ($op["id"]); ?>"></div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<nav id="page">
 			<ul class="pagination">
-				<li><span>&laquo;</span></li>
-				<?php if(is_array($uaList)): $i = 0; $__LIST__ = $uaList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ua): $mod = ($i % 2 );++$i; if(($i) == "p"): ?><li class="active"><span><?php echo ($i); ?></span></li>
-				<?php else: ?>
-				<li><span><?php echo ($i); ?></span></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-				<li><span>&raquo;</span></li>
+				<?php echo ($page); ?>
 			</ul>
 		</nav>
+		<?php echo ($subview); ?>
 	</div>
 <script type="text/javascript">
 	$(function(){
@@ -65,19 +62,48 @@
 			$(this).siblings().removeClass('option-info');
 		});
 		lock = 1;
-		$('.page').children('a').click(function(){
+		$('.pagination').children('li').click(function(){
 			if(lock == 1){
 				lock = 0;
+				var ans = $('.option-info').children('input').val();
+				var p = $(this).children('span').text();
 				$.ajax({
 					url:'/ExamSystem/index.php/Home/Student/write',
 					type:'POST',
-					data:{examid:examid},
+					data:{UAid:<?php echo ($UAid); ?>,ans:ans},
 					success:function(data,status){
-						
+						window.location.href = '/ExamSystem/index.php/Home/Student/answering/examid/'+<?php echo ($_GET['examid']); ?>+'/p/'+p;
 					}
 				});
 			}
 		});
+		if($('#subPaper')){
+			var locksub = 1;
+			$('#subPaper').click(function(){
+				var ans = $('.option-info').children('input').val();
+				$.ajax({
+					url:'/ExamSystem/index.php/Home/Student/write',
+					type:'POST',
+					data:{UAid:<?php echo ($UAid); ?>,ans:ans},
+					success:function(data,status){
+						var r = confirm("确定要交卷吗");
+				if(r == true && locksub == 1){
+					locksub = 0;
+					$.ajax({
+						url:'/ExamSystem/index.php/Home/Student/subpaper',
+						type:'POST',
+						data:{examid:<?php echo ($_GET['examid']); ?>},
+						success:function(data,status){
+							locksub = 1;
+							alert(data.info);
+							window.location.href = '/ExamSystem/index.php/Home/Student';
+						}
+					});
+				}
+					}
+				});
+			});
+		}
 	});
 </script>
 </body>

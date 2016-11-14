@@ -50,7 +50,7 @@
 					<button class="btn btn-info" onclick="createPaper({$ex.id});">进入考试</button>
 					<else />
 					<p>成绩：<span>{$ex.score}</span></p>
-					<button class="btn btn-success">查看成绩</button>
+					<a class="btn btn-success" href="__APP__/Home/Student/checking/examid/{$ex.id}">查看详情</a>
 					</if>
 				</div>
 			</div>

@@ -35,8 +35,8 @@
 			<h1>{$stem}</h1>
 		</div>
 		<div class="optionBox">
-			<volist name="optionList" id="op" key="k">
-				<if condition="$op['id'] eq $ans">
+			<volist name="optionBag['data']" id="op" key="k">
+				<if condition="$op['id'] eq $optionBag['ans']">
 				<div class="option option-info">{:chr($k+64).'.'}<span>{$op.content}</span><input type="hidden" value="{$op.id}"></div>
 				<else />
 				<div class="option">{:chr($k+64).'.'}<span>{$op.content}</span><input type="hidden" value="{$op.id}"></div>
@@ -45,17 +45,10 @@
 		</div>
 		<nav id="page">
 			<ul class="pagination">
-				<li><span>&laquo;</span></li>
-				<volist name="uaList" id="ua">
-				<eq name="i" value="p">
-				<li class="active"><span>{$i}</span></li>
-				<else />
-				<li><span>{$i}</span></li>
-				</eq>
-				</volist>
-				<li><span>&raquo;</span></li>
+				{$page}
 			</ul>
 		</nav>
+		{$subview}
 	</div>
 <script type="text/javascript">
 	$(function(){
@@ -64,19 +57,48 @@
 			$(this).siblings().removeClass('option-info');
 		});
 		lock = 1;
-		$('.page').children('a').click(function(){
+		$('.pagination').children('li').click(function(){
 			if(lock == 1){
 				lock = 0;
+				var ans = $('.option-info').children('input').val();
+				var p = $(this).children('span').text();
 				$.ajax({
 					url:'__APP__/Home/Student/write',
 					type:'POST',
-					data:{examid:examid},
+					data:{UAid:{$UAid},ans:ans},
 					success:function(data,status){
-						
+						window.location.href = '__APP__/Home/Student/answering/examid/'+{$Think.get.examid}+'/p/'+p;
 					}
 				});
 			}
 		});
+		if($('#subPaper')){
+			var locksub = 1;
+			$('#subPaper').click(function(){
+				var ans = $('.option-info').children('input').val();
+				$.ajax({
+					url:'__APP__/Home/Student/write',
+					type:'POST',
+					data:{UAid:{$UAid},ans:ans},
+					success:function(data,status){
+						var r = confirm("确定要交卷吗");
+				if(r == true && locksub == 1){
+					locksub = 0;
+					$.ajax({
+						url:'__APP__/Home/Student/subpaper',
+						type:'POST',
+						data:{examid:{$Think.get.examid}},
+						success:function(data,status){
+							locksub = 1;
+							alert(data.info);
+							window.location.href = '__APP__/Home/Student';
+						}
+					});
+				}
+					}
+				});
+			});
+		}
 	});
 </script>
 </body>

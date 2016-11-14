@@ -1,0 +1,63 @@
+<include file="public/head" />
+<style>
+	.option{
+		padding: 15px;		
+		border-radius: 4px;
+		margin: 20px 0;
+		border:1px solid #ccc;
+	}
+	.option-success{
+		background-color: #d6e9c6;
+	}
+	.option-danger{
+		background-color: #ebccd1;
+	}
+	#page{
+		text-align: center;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"><a href="__APP__/Home/Student" class="navbar-brand">考试系统&nbsp;<span class="label label-info">学生版</span></a></div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="__CONTROLLER__/logout">注销</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="page-header">
+			<h1>{$stem}</h1>
+		</div>
+		<div class="optionBox">
+			<volist name="optionBag['data']" id="op" key="k">
+				<if condition="$op['isans'] eq 1">
+				<div class="option option-success">{:chr($k+64).'.'}<span>{$op.content}</span></div>
+				<elseif condition="($op['id'] eq $optionBag['ans']) AND ($op['isans'] eq 0)" />
+				<div class="option option-danger">{:chr($k+64).'.'}<span>{$op.content}</span></div>
+				<else />
+				<div class="option">{:chr($k+64).'.'}<span>{$op.content}</span></div>
+				</if>
+			</volist>
+		</div>
+		<nav id="page">
+			<ul class="pagination">
+				{$page}
+			</ul>
+		</nav>
+		{$subview}
+	</div>
+<script type="text/javascript">
+	$(function(){
+		$('.pagination').children('li').click(function(){
+			var p = $(this).children('span').text();
+			window.location.href = '__APP__/Home/Student/checking/examid/'+{$Think.get.examid}+'/p/'+p;			
+		});
+	});
+</script>
+</body>
+</html>
